@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/tail.css">
+    <link rel="stylesheet" href="./src/account.css">
+</head>
+<body>
+    <div class="navPage w-full h-[50px] absolute top-6 text-white">
+    <div class="leftIcons flex justif-between gap-5 items-center disaster-module">
+        <a href="./student.html"><li>Home</li></a>
+        <a href="#" id="logout-btn"><li>Logout</li></a>
+        <!-- <a href="./earthVideo.html"><li>Video</li></a> -->
+        <!-- <a href="./earthquake.html"><li>Book</li></a> -->
+        <!-- <a href="./earthQuiz.html"><li>Quiz</li></a> -->
+    </div>
+    </div>
+
+    <main class="profile-container">
+        <div class="profile-card">
+            <header class="profile-header">
+                <!-- <img src="https://via.placeholder.com/100" alt="Profile Picture" class="profile-avatar"> -->
+                <div class="profile-info w-full">
+                    <div class="flex gap-5">
+                        <div>
+                            <h1 id="student-name">Loading...</h1>
+                            <p id="student-email">—</p>
+                        </div>
+                        <img class="w-15 hidden" src="/assets/images/badges/aegis.png" alt="Badge">
+                        
+                    </div>
+                    <div class="flex gap-2 items-center self-end relative w-full h-full">
+                        <img class="opacity-35 w-6 badge absolute right-56 filter brightness-125 contrast-110" src="/assets/images/badges/earthquake.png" alt="Earthquake Badge" title="Earthquake Preparedness Badge">
+                        <img class="opacity-35 w-6 badge absolute right-48 filter brightness-125 contrast-110" src="/assets/images/badges/flood.png" alt="Flood Badge" title="Flood Preparedness Badge">
+                        <img class="opacity-35 w-6 top-[-12px] badge absolute right-40 filter brightness-125 contrast-110" src="/assets/images/badges/landslide.png" alt="Landslide Badge" title="Landslide Preparedness Badge">
+                        <img class="opacity-35 w-6 top-[-13px] badge absolute right-32 filter brightness-125 contrast-110" src="/assets/images/badges/tsunami.png" alt="Tsunami Badge" title="Tsunami Preparedness Badge">
+                        <img class="opacity-35 w-[27px] top-[-16px] badge absolute right-24 filter brightness-125 contrast-110" src="/assets/images/badges/drought.png" alt="Drought Badge" title="Drought Preparedness Badge">
+                        <img class="opacity-35 w-6 top-[-12px] badge absolute right-16 filter brightness-125 contrast-110" src="/assets/images/badges/cyclone.png" alt="Cyclone Badge" title="Cyclone Preparedness Badge">
+                        <img class="opacity-35 w-6 top-[-12px] badge absolute right-8 filter brightness-125 contrast-110" src="/assets/images/badges/heatwave.png" alt="Heat Wave Badge" title="Heat Wave Preparedness Badge">
+                        <img class="opacity-35 w-6 badge absolute right-0 filter brightness-125 contrast-110" src="/assets/images/badges/fire.png" alt="Fire Badge" title="Fire Preparedness Badge">
+                    </div>
+                </div>
+            </header>
+
+            <section class="profile-details">
+                <div class="detail-item">
+                    <span>College</span>
+                    <strong id="student-college">—</strong>
+                </div>
+                <div class="detail-item">
+                    <span>Emergency Email</span>
+                    <strong id="student-emg-mail">—</strong>
+                </div>
+            </section>
+
+            <section class="module-progress">
+                <h2>Module Progress</h2>
+                <div class="modules-grid">
+                    <div class="module-item">
+                        <h3>Earthquake</h3>
+                        <p>Score: <span class="score">85</span></p>
+                        <p>Status: <span class="status completed">Completed</span></p>
+                    </div>
+                    <div class="module-item">
+                        <h3>Landslide</h3>
+                        <p>Score: <span class="score">92</span></p>
+                        <p>Status: <span class="status completed">Completed</span></p>
+                    </div>
+                    <div class="module-item">
+                        <h3>Tsunami</h3>
+                        <p>Score: <span class="score">60</span></p>
+                        <p>Status: <span class="status in-progress">In Progress</span></p>
+                    </div>
+                    <div class="module-item">
+                        <h3>Flood</h3>
+                        <p>Score: <span class="score">78</span></p>
+                        <p>Status: <span class="status completed">Completed</span></p>
+                    </div>
+                    <div class="module-item">
+                        <h3>Drought</h3>
+                        <p>Score: <span class="score">0</span></p>
+                        <p>Status: <span class="status not-started">Not Started</span></p>
+                    </div>
+                    <div class="module-item">
+                        <h3>Cyclone</h3>
+                        <p>Score: <span class="score">0</span></p>
+                        <p>Status: <span class="status not-started">Not Started</span></p>
+                    </div>
+                    <div class="module-item">
+                        <h3>Heat Wave</h3>
+                        <p>Score: <span class="score">45</span></p>
+                        <p>Status: <span class="status in-progress">In Progress</span></p>
+                    </div>
+                    <div class="module-item">
+                        <h3>Forest Fire</h3>
+                        <p>Score: <span class="score">95</span></p>
+                        <p>Status: <span class="status completed">Completed</span></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script type="module" src="./src/verify.js"></script>
+    <script type="module" src="./src/studentProfile.js"></script>
+</body>
+</html>

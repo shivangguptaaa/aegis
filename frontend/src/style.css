@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Doto:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Doto', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: black
+}
+
+nav {
+  padding: 25px 40px;
+}
+
+.heroVideo {
+  object-fit: cover;
+  object-position: center;
+}
+
+.logo{
+   font-family: "Bruno Ace", sans-serif;
+   font-size: 22px;
+   font-weight: 800;
+}
+
+.leftIcons {
+  font-family: "Doto", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.leftIcons li{
+   /* background-color: rgba(25, 24, 24, 0.543); */
+   box-shadow: 2px 2px 1px 1px rgb(193, 193, 193), 4px 4px 5px 2px whitesmoke;
+   padding: 7px 20px;
+   border: none;
+   border-radius: 50px;
+   cursor: pointer;
+    display: inline-block;
+}
+
+.leftIcons li:hover{
+   background-color: rgba(100, 97, 97, 0.543);
+}
+
+.leftText{
+  font-family: "Doto";
+  text-shadow: 2px 2px 1px purple;
+}
+
+.leftText h2{
+  letter-spacing: 13px;
+}
+
+.rightText{
+  font-family: "Doto";
+}
+
+.module{
+  margin: 150px 0 30px 0;
+}
+
+.module-div img{
+  opacity: 0.3;
+}
+
+.heatwave img{
+  opacity: 0.7;
+}
+
+.custom-cursor {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  pointer-events: none; 
+  transform: translate(-50%, -50%); 
+  z-index: 9999; 
+}
+.custom-cursor img {
+  pointer-events: none;
+  width: 35px;
+  height: 35px;
+  display: block;
+}
+
+
+.module-div p{
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  color: #ffffff;
+}
+
+ul li {
+  text-decoration: none;
+  list-style: none;
+}
+
+.navPage {
+  padding-left: 25px;
+}
+
+
+
+/* Live Campus + GDACS Alerts Drawer (bottom-left mirror of Aegis AI) */
+#alerts-widget {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 340px;
+  max-width: calc(100vw - 40px);
+  height: 40px;
+  background: rgba(18, 19, 22, 0.94);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  color: #f3f4f6;
+  cursor: pointer;
+  transition: height 0.3s ease;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  z-index: 999;
+  font-family: "Poppins", sans-serif;
+}
+
+#alerts-widget.open {
+  height: 430px;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 12px;
+  cursor: default;
+}
+
+.alerts-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 36px;
+}
+
+.alerts-title {
+  font-family: "Doto", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.alerts-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  display: inline-block;
+}
+
+.alerts-badge-dot.has-warning {
+  background: #f59e0b;
+  box-shadow: 0 0 8px #f59e0b;
+}
+
+.alerts-close-btn {
+  display: none;
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#alerts-widget.open .alerts-close-btn {
+  display: inline-block;
+}
+
+.alerts-body {
+  display: none;
+  margin-top: 8px;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+#alerts-widget.open .alerts-body {
+  display: block;
+}
+
+.alerts-section-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #93c5fd;
+  margin: 8px 0 6px;
+}
+
+.alert-feed-card {
+  background: #1b1d21;
+  border: 1px solid #2e3238;
+  border-left: 3px solid #3b82f6;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.alert-feed-card.sev-Emergency,
+.alert-feed-card.sev-Red {
+  border-left-color: #ef4444;
+}
+
+.alert-feed-card.sev-Warning,
+.alert-feed-card.sev-Orange {
+  border-left-color: #f59e0b;
+}
+
+.alert-feed-card.sev-Green {
+  border-left-color: #22c55e;
+}
+
+.alert-feed-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.alert-feed-meta {
+  font-size: 11px;
+  color: #9ca3af;
+}

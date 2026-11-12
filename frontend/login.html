@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="./src/tail.css">
+  <link rel="stylesheet" href="./src/login.css">
+</head>
+<body class="flex items-center justify-center h-screen bg-black">
+  <div class="leftIcons absolute top-10 left-10">
+      <a href="./index.html"><li>Home</li></a>
+  </div>
+  <div class="w-full max-w-sm perspective-container">
+    <form id="loginForm" class="p-8 bg-black/30 backdrop-blur-2xl border border-white/20 rounded-3xl shadow-2xl shadow-blue-500/20">
+      <div class="mb-6">
+        <h2 class="text-3xl font-bold text-center text-gray-100">Login</h2>
+      </div>
+      
+      <div class="mb-6">
+        <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Email</label>
+        <input type="email" id="email" name="email" required
+          class="w-full custom-input" 
+          placeholder="Enter your email">
+      </div>
+      
+      <div class="mb-6">
+        <label for="password" class="block text-sm font-medium text-gray-400 mb-2">Password</label>
+        <input type="password" id="password" name="password" required
+          class="w-full custom-input" 
+          placeholder="Enter your password">
+      </div>
+      
+      <div class="mb-4">
+        <button type="submit"
+          class="w-full py-3 bg-blue-600 text-white font-semibold custom-button hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:ring-offset-gray-900 transition-all duration-200">
+          Login
+        </button>
+      </div>
+      <div class="text-center text-gray-400 text-sm">
+        Don't have an account? 
+        <a href="./registerStudent.html" class="font-medium text-blue-400 hover:text-blue-300">
+          Register Student
+        </a>
+        <span class="mx-1">/</span>
+        <a href="./collegeLogin.html" class="font-medium text-blue-400 hover:text-blue-300">
+          Login As College
+        </a>
+      </div>
+    </form>
+  </div>
+  <script type="module" src="./src/login.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration</title>
+  <link rel="stylesheet" href="./src/tail.css">
+  <link rel="stylesheet" href="./src/login.css">
+</head>
+<body class="flex items-center justify-center min-h-screen bg-black py-10">
+  <div class="leftIcons absolute top-10 left-10">
+    <a href="./index.html"><li>Home</li></a>
+  </div>
+  <div class="w-full max-w-sm perspective-container">
+    <form id="studentRegisterForm" class="p-8 bg-black/30 backdrop-blur-2xl border border-white/20 rounded-3xl shadow-2xl shadow-blue-500/20">
+      <div class="mb-5">
+        <h2 class="text-3xl font-bold text-center text-gray-100">Register Student</h2>
+      </div>
+
+      <div class="mb-4">
+        <label for="name" class="block text-sm font-medium text-gray-400 mb-1.5">Full Name</label>
+        <input type="text" id="name" name="name" required minlength="2"
+          class="w-full custom-input" placeholder="Enter your full name">
+      </div>
+
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-medium text-gray-400 mb-1.5">Email</label>
+        <input type="email" id="email" name="email" required
+          class="w-full custom-input" placeholder="Enter your email">
+      </div>
+
+      <div class="mb-4">
+        <label for="password" class="block text-sm font-medium text-gray-400 mb-1.5">Password</label>
+        <input type="password" id="password" name="password" required minlength="6"
+          class="w-full custom-input" placeholder="Create password (min. 6 chars)">
+      </div>
+
+      <div class="mb-4">
+        <label for="college" class="block text-sm font-medium text-gray-400 mb-1.5">College</label>
+        <select id="college" name="college" required
+          class="w-full custom-input bg-black/80 text-gray-100">
+          <option value="">Loading verified colleges...</option>
+        </select>
+      </div>
+
+      <div class="mb-5">
+        <label for="emgMail" class="block text-sm font-medium text-gray-400 mb-1.5">Emergency Contact Email</label>
+        <input type="email" id="emgMail" name="emgMail" required
+          class="w-full custom-input" placeholder="Parent / guardian email">
+      </div>
+
+      <div class="mb-4">
+        <button type="submit" id="submitBtn"
+          class="w-full py-3 bg-blue-600 text-white font-semibold custom-button hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:ring-offset-gray-900 transition-all duration-200">
+          Register
+        </button>
+      </div>
+
+      <div class="text-center text-gray-400 text-sm">
+        Already have an account?
+        <a href="./login.html" class="font-medium text-blue-400 hover:text-blue-300">Login</a>
+        <span class="mx-1">/</span>
+        <a href="./collegeRegister.html" class="font-medium text-blue-400 hover:text-blue-300">Register College</a>
+      </div>
+    </form>
+  </div>
+
+  <script type="module" src="./src/studentRegister.js"></script>
+</body>
+</html>

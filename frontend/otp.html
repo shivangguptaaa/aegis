@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTP Verification</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/otp.css">
+</head>
+<body>
+  
+  <div class="background-container"></div>
+  
+  <div class="leftIcons">
+      <a href="./index.html"><li>Home</li></a>
+  </div>
+
+  <div class="main-content-wrapper">
+    <div class="perspective-container">
+      <form id="otpForm">
+        <h2>Enter OTP</h2>
+        <p class="info-text">A 6-digit code has been sent to your email.</p>
+        <div id="otp-container">
+          <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="otp-input" required>
+          <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="otp-input" required>
+          <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="otp-input" required>
+          <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="otp-input" required>
+          <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="otp-input" required>
+          <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="otp-input" required>
+        </div>
+        <button type="submit" class="custom-button">Verify</button>
+        <div class="footer-text">
+          Didn't receive the code? 
+          <a href="#" id="resendOtpLink">Resend OTP</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <script type="module" src="./src/otp.js"></script>
+</body>
+</html>

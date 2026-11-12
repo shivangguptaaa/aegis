@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Command Dashboard • Aegis</title>
+  <link rel="stylesheet" href="./src/chatbot.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/dashboard.css">
+</head>
+<body>
+  <div class="navPage w-full h-[50px] absolute top-0">
+    <div class="leftIcons flex justify-between gap-5 items-center disaster-module">
+      <a href="#" class="logout-college"><li>Logout</li></a>
+    </div>
+  </div>
+
+  <div class="dashboard-container">
+    <header class="dashboard-header">
+      <h1>Student Progress Dashboard</h1>
+    </header>
+
+    <section class="kpi-grid" id="kpi-grid">
+      <div class="kpi-card">
+        <span class="kpi-label">Enrolled Students</span>
+        <strong class="kpi-value" id="kpi-total">—</strong>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Avg Readiness Score</span>
+        <strong class="kpi-value" id="kpi-avg">—</strong>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Fully Certified (8/8)</span>
+        <strong class="kpi-value" id="kpi-certified">—</strong>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Lowest Completion Area</span>
+        <strong class="kpi-value" id="kpi-weakest">—</strong>
+      </div>
+    </section>
+
+    <section class="command-grid">
+      <div class="command-card">
+        <h2>Campus Alert &amp; Drill Broadcast</h2>
+        <p class="command-sub">Dispatches email alerts to enrolled students &amp; guardian contacts and posts to student dashboards.</p>
+        <form id="broadcastForm" class="broadcast-form">
+          <div class="form-row-two">
+            <input type="text" id="alertTitle" placeholder="Alert title (e.g. Heatwave Advisory)" required />
+            <select id="alertDisaster">
+              <option value="General">General</option>
+              <option value="Earthquake">Earthquake</option>
+              <option value="Flood">Flood</option>
+              <option value="Cyclone">Cyclone</option>
+              <option value="Heat Wave">Heat Wave</option>
+              <option value="Fire">Fire</option>
+              <option value="Landslide">Landslide</option>
+              <option value="Tsunami">Tsunami</option>
+            </select>
+          </div>
+          <div class="form-row-two">
+            <select id="alertSeverity">
+              <option value="Drill">Drill</option>
+              <option value="Advisory" selected>Advisory</option>
+              <option value="Warning">Warning</option>
+              <option value="Emergency">Emergency</option>
+            </select>
+            <button type="submit" id="sendBroadcastBtn" class="broadcast-btn">Send Campus Alert</button>
+          </div>
+          <textarea id="alertMessage" rows="2" placeholder="Clear evacuation or preparedness instructions..." required></textarea>
+          <div id="broadcastFeedback" class="broadcast-feedback"></div>
+        </form>
+        <div id="recent-alerts-box" class="recent-alerts-box"></div>
+      </div>
+
+      <div class="command-card">
+        <div class="command-card-head">
+          <h2>Live GDACS Global Hazard Feed</h2>
+          <span class="live-pill">LIVE TELEMETRY</span>
+        </div>
+        <p class="command-sub">Click any active event to pre-fill a campus preparedness advisory.</p>
+        <div id="gdacs-feed-list" class="gdacs-feed-list">
+          <div class="loading-inline">Fetching live GDACS hazards...</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="students-toolbar">
+      <h2>Student Readiness Tracker</h2>
+      <input type="text" id="studentSearch" class="student-search" placeholder="Search student by name or email..." />
+    </div>
+
+    <main id="students-list-container" class="students-list-container">
+      <div class="loading">Loading student data...</div>
+    </main>
+  </div>
+
+  <script type="module" src="./src/dashboard.js"></script>
+  <script type="module" src="./src/verifyCollege.js"></script>
+  <script type="module" src="./src/chatbot.js"></script>
+</body>
+</html>

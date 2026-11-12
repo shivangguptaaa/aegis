@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/tail.css">
+  <link rel="stylesheet" href="./src/style.css">
+  <title>Aegis</title>
+</head>
+
+<body >
+  <div class="custom-cursor">
+    <img src="/assets/images/cursor2.png" alt="CURSOR">
+  </div>
+  <div class="h-screen w-full select-none">
+    <nav class="fixed top-0 w-full h-[50px] text-white z-20">
+      <ul class="flex justify-between items-center">
+        <div class="logo">
+          <li>AEGIS</li>
+        </div>
+        <div class="leftIcons login-div flex justify-center gap-5 items-center">
+          <a class="login-a" href="./login.html"><li>Login</li></a>
+          <!-- <a class="account-a hidden" href="./account.html"><li>Account</li></a> -->
+      </div>
+      </ul>
+    </nav>
+    <div class="heroSection h-screen w-full">
+      <div class="leftText absolute top-1/4 left-1/7 text-white">  
+        <h2 class="text-7xl">Hello</h2>
+        <p class="text-5xl font-semibold">My Friend</p>
+      </div>
+      <video class="heroVideo  pointer-events-none h-[100%] w-[100%]" src="/assets/videos/heroVideo8.MOV" autoplay muted></video>
+      <div class="rightText absolute bottom-1/3 right-1/9 text-white">  
+        <h2 class="text-4xl font-bold">It's All About You </h2>
+        <p class="text-5xl font-semibold">& Your Safety</p>
+      </div>
+    </div>
+    <div class="modules w-full h-screen">
+      <div class="module flex justify-center items-center text-6xl text-white">
+        <h1>Modules</h1>
+      </div>
+      <div class="module-div w-full h-1/3 relative" data-disaster="earthquake">
+        <div class="w-[100%] h-[100%] object-center bg-black"></div>
+        <p class="text-white absolute top-1/2 left-1/2">Earthquake</p>
+        <img src="/assets/images/earthquake3.png" class="module-img absolute top-0 left-[-100%] w-[100%] h-[100%] object-cover object-center" alt="">
+      </div>
+      <div class="module-div w-full h-1/3 relative" data-disaster="flood">
+        <div class="w-[100%] h-[100%] object-center bg-black"></div>
+        <p class="text-white absolute top-1/2 left-1/2">Flood</p>
+        <img src="/assets/images/flood.jpg" class="module-img absolute top-0 left-[-100%] w-[100%] h-[100%] object-cover object-bottom" alt="">
+      </div>
+      <div class="module-div w-full h-1/3 relative" data-disaster="landslide">
+        <div class="w-[100%] h-[100%] object-center bg-black"></div>
+        <p class="text-white absolute top-1/2 left-1/2">Land Slide</p>
+        <img src="/assets/images/landsilde.png" class="module-img absolute top-0 left-[-100%] w-[100%] h-[100%] object-cover object-center" alt="">
+      </div>
+      <div class="module-div w-full h-1/3 relative" data-disaster="tsunami">
+        <div class="w-[100%] h-[100%] object-center bg-black"></div>
+        <p class="text-white absolute top-1/2 left-1/2">Tsunami</p>
+        <img src="/assets/images/tsunami.png" class="module-img absolute top-0 left-[-100%] w-[100%] h-[100%] object-cover object-center" alt="">
+      </div>
+      <div class="module-div w-full h-1/3 relative" data-disaster="drought">
+        <div class="w-[100%] h-[100%] object-center bg-black"></div>
+        <p class="text-white absolute top-1/2 left-1/2">Drought</p>
+        <img src="/assets/images/drought.png" class="module-img absolute top-0 left-[-100%] w-[100%] h-[100%] object-cover object-bottom" alt="">
+      </div>
+      <div class="module-div w-full h-1/3 relative" data-disaster="cyclone">
+        <div class="w-[100%] h-[100%] object-center bg-black"></div>
+        <p class="text-white absolute top-1/2 left-1/2">Cyclone</p>
+        <img src="/assets/images/cyclone.png" class="module-img absolute top-0 left-[-100%] w-[100%] h-[100%] object-cover object-center" alt="">
+      </div>
+      <div class="heatwave module-div w-full h-1/3 relative" data-disaster="heatwave">
+        <div class="w-[100%] h-[100%] object-center bg-black"></div>
+        <p class="text-white absolute top-1/2 left-1/2">Heat Wave</p>
+        <img src="/assets/images/heatwave2.png" class="module-img absolute top-0 left-[-100%] w-[100%] h-[100%] object-cover object-center" alt="">
+      </div>
+      <div class="module-div w-full h-1/3 relative" data-disaster="fire">
+        <div class="w-[100%] h-[100%] object-center bg-black"></div>
+        <p class="text-white absolute top-1/2 left-1/2">Fire</p>
+        <img src="/assets/images/fire.png" class="module-img absolute top-0 left-[-100%] w-[100%] h-[100%] object-cover object-center" alt="">
+      </div>
+    </div>
+  </div>
+  <script type="module" src="./src/animations.js"></script>
+  <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earthquake Preparedness Quiz</title>
+    <link rel="stylesheet" href="./src/tail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/earthquakeQuiz.css">
+</head>
+<body>
+    <div class="navPage w-full h-[50px] absolute top-6 text-white">
+    <div class="leftIcons flex justif-between gap-5 items-center disaster-module">
+        <a href="./student.html"><li>Home</li></a>
+        <a href="./earthVideo.html"><li>Video</li></a>
+        <a href="./earthquake.html"><li>Book</li></a>
+        <!-- <a href="./earthQuiz.html"><li>Quiz</li></a> -->
+    </div>
+    </div>
+    <div id="quiz-container">
+        <div id="quiz-header">
+            <div id="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>
+            <span id="question-counter"></span>
+        </div>
+        <div id="quiz-body">
+            <p id="question-text"></p>
+            <div id="answer-options"></div>
+        </div>
+        <div id="quiz-footer">
+            <button id="next-button">Next</button>
+        </div>
+    </div>
+    <script type="module" src="./src/earthquakeQuiz.js"></script>
+    <script type="module" src="./src/verify.js"></script>
+</body>
+</html>
