@@ -28,12 +28,24 @@ const allowedOrigins = new Set(
   ].filter(Boolean)
 );
 
+// 1. Serve static frontend assets first so CSS/JS/images are served directly
+const distDir = path.join(__dirname, "..", "frontend", "dist");
+if ((process.env.SERVE_FRONTEND === "true" || process.env.NODE_ENV === "production") && fs.existsSync(distDir)) {
+  app.use(express.static(distDir));
+}
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
     origin(origin, callback) {
-      if (!origin || allowedOrigins.has(origin)) {
+      if (
+        !origin ||
+        allowedOrigins.has(origin) ||
+        origin.endsWith(".onrender.com") ||
+        origin.endsWith(".vercel.app") ||
+        process.env.NODE_ENV === "production"
+      ) {
         return callback(null, true);
       }
       return callback(new Error("Not allowed by CORS"));
@@ -53,11 +65,6 @@ app.get("/health", (req, res) => {
 app.use("/college", collegeRoute);
 app.use("/student", studentRoute);
 app.use("/aegis", chatRoute);
-
-const distDir = path.join(__dirname, "..", "frontend", "dist");
-if ((process.env.SERVE_FRONTEND === "true" || process.env.NODE_ENV === "production") && fs.existsSync(distDir)) {
-  app.use(express.static(distDir));
-}
 
 const PORT = process.env.PORT || 5000;
 
