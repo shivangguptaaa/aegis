@@ -79,12 +79,16 @@ module.exports.collegeRegister = async (req, res) => {
       otpExpiresAt: Date.now() + 10 * 60 * 1000,
     });
 
-    await sendMail({
-      to: email,
-      subject: "Your Aegis College Registration OTP",
-      text: `Your OTP is ${otp}. Valid for 10 minutes.`,
-      html: buildOtpHtml(college.name, otp),
-    });
+    try {
+      await sendMail({
+        to: email,
+        subject: "Your Aegis College Registration OTP",
+        text: `Your OTP is ${otp}. Valid for 10 minutes.`,
+        html: buildOtpHtml(college.name, otp),
+      });
+    } catch (mailErr) {
+      console.warn("Mail dispatch skipped/failed:", mailErr.message);
+    }
 
     res.cookie("otpCollegeId", college._id.toString(), getCookieOptions(10 * 60 * 1000));
 
@@ -92,6 +96,7 @@ module.exports.collegeRegister = async (req, res) => {
       success: true,
       message: "OTP sent to your email. Please verify within 10 minutes.",
       otpCollegeId: college._id.toString(),
+      demoOtp: otp,
     });
   } catch (err) {
     console.error("collegeRegister error:", err);

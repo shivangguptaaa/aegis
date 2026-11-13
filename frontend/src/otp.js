@@ -6,6 +6,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const otpForm = document.getElementById("otpForm");
   const otpInputs = document.querySelectorAll(".otp-input");
   const resendLink = document.getElementById("resendOtpLink");
+  const demoBanner = document.getElementById("demoOtpBanner");
+  const demoVal = document.getElementById("demoOtpVal");
+
+  function fillOtpDigits(code) {
+    const digits = String(code || "").replace(/\D/g, "").slice(0, 6);
+    otpInputs.forEach((input, idx) => {
+      input.value = digits[idx] || "";
+    });
+    if (digits.length > 0) {
+      const focusIdx = Math.min(digits.length, otpInputs.length - 1);
+      otpInputs[focusIdx].focus();
+    }
+  }
+
+  const storedDemoOtp = sessionStorage.getItem("aegis_demo_otp");
+  if (storedDemoOtp && demoBanner && demoVal) {
+    demoVal.textContent = storedDemoOtp;
+    demoBanner.style.display = "block";
+    demoVal.addEventListener("click", () => fillOtpDigits(storedDemoOtp));
+  }
 
   formContainer.addEventListener("mousemove", (e) => {
     const { left, top, width, height } = formContainer.getBoundingClientRect();
@@ -58,6 +78,13 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         const otpCollegeId = sessionStorage.getItem("aegis_otp_college_id");
         const res = await axiosInstance.post("/college/resend-otp", { otpCollegeId });
+        if (res.data?.demoOtp) {
+          sessionStorage.setItem("aegis_demo_otp", String(res.data.demoOtp));
+          if (demoBanner && demoVal) {
+            demoVal.textContent = res.data.demoOtp;
+            demoBanner.style.display = "block";
+          }
+        }
         alert(res.data?.message || "A new OTP has been sent.");
       } catch (err) {
         alert(err.response?.data?.message || "Could not resend OTP. Please register again.");
@@ -80,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const response = await axiosInstance.post("/college/verify-otp", { otp, otpCollegeId });
       if (response.data.success) {
         sessionStorage.removeItem("aegis_otp_college_id");
+        sessionStorage.removeItem("aegis_demo_otp");
         if (response.data.token) {
           localStorage.setItem("aegis_college_token", response.data.token);
         }

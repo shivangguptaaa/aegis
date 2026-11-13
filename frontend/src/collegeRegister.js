@@ -54,7 +54,10 @@ registerForm.addEventListener("submit", async (e) => {
       if (res.data.otpCollegeId) {
         sessionStorage.setItem("aegis_otp_college_id", res.data.otpCollegeId);
       }
-      alert("OTP sent to your email! Please verify.");
+      if (res.data.demoOtp) {
+        sessionStorage.setItem("aegis_demo_otp", String(res.data.demoOtp));
+      }
+      alert("Registration received! Verification code generated. Please verify.");
       window.location.href = "./otp.html";
     } else {
       alert(res.data.message || "Registration failed!");

@@ -22,6 +22,9 @@
       <form id="otpForm">
         <h2>Enter OTP</h2>
         <p class="info-text">A 6-digit code has been sent to your email.</p>
+        <div id="demoOtpBanner" style="display:none; margin-bottom: 1.25rem; padding: 0.65rem 0.9rem; background: rgba(59, 130, 246, 0.18); border: 1px solid rgba(96, 165, 250, 0.4); border-radius: 12px; text-align: center; font-size: 0.85rem; color: #93c5fd;">
+          <span>Demo OTP: <strong id="demoOtpVal" style="color: #ffffff; letter-spacing: 2px; cursor: pointer; text-decoration: underline;" title="Click to auto-fill"></strong> (click to fill)</span>
+        </div>
         <div id="otp-container">
           <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="otp-input" required>
           <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="otp-input" required>
